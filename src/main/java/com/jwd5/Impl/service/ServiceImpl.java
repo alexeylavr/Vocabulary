@@ -5,7 +5,7 @@ import com.jwd5.Impl.source.InputProcessorImpl;
 import com.jwd5.entity.Dao;
 import com.jwd5.service.Service;
 import com.jwd5.source.InputProcessor;
-import jdk.internal.net.http.common.Pair;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
