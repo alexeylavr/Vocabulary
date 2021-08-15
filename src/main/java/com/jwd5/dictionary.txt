@@ -1,0 +1,10 @@
+element - элемент
+build - строить
+run - бежать
+unlock - открыть
+day - день
+world - мир
+word - слово
+update - обновление
+window - окно
+skill - умение
