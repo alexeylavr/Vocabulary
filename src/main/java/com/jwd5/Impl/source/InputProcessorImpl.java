@@ -12,11 +12,11 @@ import java.util.regex.Pattern;
 public class InputProcessorImpl implements InputProcessor {
 
     private final String WELCOME_MESSAGE = "This is an EN-RU Dictionary\n" +
-            "It helps to learn EN words by Quiz" +
-            "\t\tRULES" +
-            "I'll show you 5 words and you must write the answer" +
-            "If your answer will be wrong, you will see right answer" +
-            "Good Luck!";
+            "It helps to learn EN words by Quiz\n" +
+            "\t\tRULES\n" +
+            "I'll show you 5 words and you must write the answer\n" +
+            "If your answer will be wrong, you will see right answer\n" +
+            "Good Luck!\n";
 
     private Scanner scanFile;
 
@@ -38,7 +38,7 @@ public class InputProcessorImpl implements InputProcessor {
         while(this.scanFile.hasNextLine()) {
             line = this.scanFile.nextLine();
             words = pattern.split(line);
-            Pair<String, String> pair = new Pair<>(words[0], words[1]);
+            Pair<String, String> pair = new Pair<>(words[0], words[2]);
             dictionary.add(pair);
         }
         return dictionary;
@@ -69,6 +69,6 @@ public class InputProcessorImpl implements InputProcessor {
 
     @Override
     public void wrongAnswers(String wordPair) {
-        System.out.println("WRONG ANSWER!!!\t Correct: " + wordPair);
+        System.out.println(wordPair);
     }
 }

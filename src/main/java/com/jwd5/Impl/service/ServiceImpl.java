@@ -16,6 +16,7 @@ public class ServiceImpl implements Service {
     private InputProcessor message = new InputProcessorImpl();
     private Dao dictionary = new DaoImpl();
     private final String WRONG_ANSWERS_LINE = "WRONG ANSWER!!!\t Correct: ";
+    private final String ALL_RIGHT = "All answers were correct!!!";
 
     @Override
     public Boolean hasWord(String word) {
@@ -70,9 +71,12 @@ public class ServiceImpl implements Service {
         String answer = "";
         for (int i = 0; i < 5; i++) {
             if (!answers[i].equals(wordPairs.get(i).getValue())){
-                answer = WRONG_ANSWERS_LINE + wordPairs.get(i).getKey() + " - " + wordPairs.get(i).getValue() + "\n";
+                answer += WRONG_ANSWERS_LINE + wordPairs.get(i).getKey() + " - " + wordPairs.get(i).getValue() + "\n";
                 count--;
             }
+        }
+        if (answer.equals("")){
+            answer = ALL_RIGHT;
         }
         message.wrongAnswers(answer);
 
