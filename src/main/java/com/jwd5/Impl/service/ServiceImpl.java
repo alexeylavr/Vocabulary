@@ -16,7 +16,7 @@ public class ServiceImpl implements Service {
     private InputProcessor message = new InputProcessorImpl();
     private Dao dictionary = new DaoImpl();
     private final String WRONG_ANSWERS_LINE = "WRONG ANSWER!!!\t Correct: ";
-    private final String ALL_RIGHT = "All answers were correct!!!";
+    private final String ALL_RIGHT = "All answers are correct!!!";
 
     @Override
     public Boolean hasWord(String word) {
